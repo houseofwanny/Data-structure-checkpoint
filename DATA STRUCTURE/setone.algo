@@ -1,0 +1,51 @@
+ALGORITHM add_distinct
+VAR 
+set1,set2: ARRAY [20] OF STRING;
+i,j,n,k: STRING;
+sum: STRING := 0;
+
+n:=Length(set1);
+k:=Length(set2);
+
+BEGIN
+    write ('Write your first set length');
+    read (n);
+    write ('Write your second set length');
+    read (k);
+
+    n:=Length(set1);
+    k:=Length(set2);
+
+    REPEAT 
+    FOR i FROM 0 to n-1 STEP 1 DO 
+    WRITE ('write your first set of elements');
+    READ (set1[i]);
+    END FOR
+
+    FOR j FROM 0 to k-1 STEP 1 DO
+        WRITE ('write you second set of elements');
+        READ (set2);
+        END FOR
+    UNTIL (set1<>[''] AND set2<>['']);
+
+
+
+    FOR i FROM 0 TO (n-1) STEP 1 DO 
+        FOR j FROM 0 TO (k-1) STEP 1 DO 
+            IF set1[i] DISTINCT(set2[j]) THAN sum1:=sum+set1[i];sum:=sum1;
+            END IF;   
+        END FOR;
+    END FOR; 
+
+
+
+    FOR i FROM 0 TO (n-1) STEP 1 DO 
+        FOR j FROM 0 TO (k-1) STEP 1 DO 
+            IF set2[i] DISTINCT(set1[j]
+            THAN sum2:=sum+set2[i];sum:=sum2;
+            END IF;   
+        END FOR;
+    END FOR;  
+
+    WRITE ('The sum of the distinct numbers is =' sum);          
+END
